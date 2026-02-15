@@ -1,0 +1,169 @@
+/* ========== FONTS ========== */
+@font-face {
+    font-family: "Amoresa";
+    src: url("fonts/Amoresa.ttf");
+  }
+  
+  @font-face {
+    font-family: "Norwester";
+    src: url("fonts/Norwester.otf");
+  }
+  
+  /* ========== VARIABLES (CANVA TUNING) ========== */
+  :root {
+    --box-width: 250px;
+    --box-height: 100px;
+    --col-gap: 50px;
+    --row-gap: 40px;
+  }
+  
+  /* ========== BASE ========== */
+  body {
+    margin: 0;
+    background: #000;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #slide {
+    position: relative;
+    width: 1280px;
+    height: 720px;
+    background: url("images/background.png") center / cover no-repeat;
+  }
+  
+  /* ========== LEFT TOPIC ========== */
+  .left-topic {
+    position: absolute;
+    left: 80px;
+    top: 230px;
+    writing-mode: vertical-rl;
+    text-transform: uppercase;
+    font-family: "Norwester";
+    font-size: 44px;
+    letter-spacing: 10px;
+    color: #111;
+  }
+  
+  /* ========== GRID ========== */
+  .options-grid {
+    position: absolute;
+    left: 250px;
+    top: 150px;
+  
+    display: grid;
+    grid-template-columns: repeat(3, var(--box-width));
+    grid-template-rows: repeat(3, var(--box-height));
+    column-gap: var(--col-gap);
+    row-gap: var(--row-gap);
+  }
+  
+  /* ========== OPTION WRAPPER ========== */
+  .option-wrapper {
+    position: relative;
+    width: var(--box-width);
+    height: var(--box-height);
+  }
+  
+  /* DEFAULT GREY BOX (CANVA STYLE) */
+  .option-base {
+    position: absolute;
+    inset: 0;
+    background: #565656;              /* Canva-like grey */
+  }
+  
+  /* OPTION TEXT */
+  .option-text {
+    position: absolute;
+    inset: 0;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    padding: 12px 18px;
+    box-sizing: border-box;
+  
+    text-align: center;
+  
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1.25;
+  
+    text-transform: uppercase;
+    color: #ffffff;
+    z-index: 3;
+    pointer-events: none;
+  
+    /* 🔥 CRITICAL FIX */
+    white-space: normal;
+    word-break: break-word;
+  }
+  
+  /* CLICK OVERLAY */
+  .option-overlay {
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+  .correct {
+    background: rgba(46, 204, 113, 0.9);
+  }
+  
+  .wrong {
+    background: rgba(231, 76, 60, 0.9);
+  }
+  
+/* ===== NAV BUTTONS (INSIDE SLIDE) ===== */
+.nav-buttons {
+    position: absolute;
+    top: 80%;
+    left: 0;
+    right: 0;
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    /* 👇 THIS IS THE KEY FIX */
+    padding: 0 120px;     /* buttons andar aa jayenge */
+  
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+  
+  .nav-buttons button {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+  
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .nav-buttons button:hover {
+    background: rgba(0,0,0,0.8);
+  }
+  
+/* ===== INTRO SLIDE ===== */
+.intro-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+    font-family: "Amoresa";
+    font-size: 90px;
+    color: #111;
+    white-space: nowrap;
+  }
+  
